@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const path = "./images";
 
-    fs.mkdir(path, (error) => {
+    fs.mkdir(path, (error)  => {
       if (error) {
         console.log(error);
       } else {
