@@ -20,7 +20,7 @@ exports.createSauce = (req, res, next) => {
 };
 
 
-//modifier uen sauce
+//modifier une sauce
 exports.modifySauce = (req, res, next) => {
     log.info('Modification d\'une sauce');
     const sauceObject = req.file ?
@@ -33,6 +33,7 @@ exports.modifySauce = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 }
 
+//supprimer une sauce
 exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(sauce => {
