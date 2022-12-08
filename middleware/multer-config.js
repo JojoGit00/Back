@@ -3,14 +3,19 @@ const fs = require('fs');
 
 const path = "./images";
 
-    fs.mkdir(path, (error)  => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("New Directory created successfully !!");
-      }
-    });
-  
+// check if directory exists
+if (fs.existsSync(path)) {
+  console.log('Directory exists!')
+} else {
+  fs.mkdir(path, (error)  => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("New Directory created successfully !!");
+    }
+  })
+};
+
 
 
 const MIME_TYPES = {
